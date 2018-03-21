@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../jquery-easyui/themes/default/easyui.css" />
+		<!-- 图标样式-->
+		<link rel="stylesheet" href="../jquery-easyui/themes/icon.css" />
+		<link rel="stylesheet" href="../jquery-easyui/themes/myicon.css" />
+		<!-- jquery核心库-->
+		<script src="../jquery-easyui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- easyui核心库-->
+		<script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+           function openTab() {
+           		alert("openTab");
+           }
+       </script>
+	</head>
+
+	<body class="easyui-layout" >
+       <!-- 北边-->
+       <div data-options="region:'north'" style="height: 80px;"></div>
+       <!-- 西边-->
+       <div data-options="region:'west',title:'导航菜单' " style="width: 200px;">
+	       <!-- 手风琴-->
+       		<div class="easyui-accordion" >
+       			<div title="客户管理" data-options="iconCls:'icon-khgl'" style="overflow:auto;padding:10px;">
+					<a  href="javascript:openTab()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-khxxgl'" style="width: 150px;">客户信息管理</a>
+					<a class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-khlsgl'" style="width: 150px;">客户流失管理</a>
+       			</div>
+       			<div title="服务管理" data-options="iconCls:'icon-fwgl'" style="overflow:auto;padding:10px;">
+					<a class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwcj'" style="width: 150px;">服务创建</a>
+					<a class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-fwfp'" style="width: 150px;">服务分配</a>
+       			</div>
+       			
+       		</div>
+       </div>
+       <!-- 中间部分-->
+       <div data-options="region:'center'" >Java1711</div>
+       <!-- 南边-->
+       <div data-options="region:'south'" style="height: 25px;" align="center">
+       	版权所有  Java711
+       </div>
+    </body>
+
+
+</html>
