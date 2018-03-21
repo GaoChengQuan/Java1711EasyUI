@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../jquery-easyui/themes/default/easyui.css" />
+		<!-- 图标样式-->
+		<link rel="stylesheet" href="../jquery-easyui/themes/icon.css" />
+		<!-- jquery核心库-->
+		<script src="../jquery-easyui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- easyui核心库-->
+		<script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		邮箱： <input id="emailId" /><p>
+		<script>
+			$("#emailId").validatebox({
+				required : true,
+				validType : ['length[9,20]','email']
+			});
+		</script>
+		
+		姓名 : <input id="nameId" />
+		<script>
+			$("#nameId").validatebox({
+				required : true,
+				validType : ['length[2,6]','zhongwen']
+			});
+		</script>
+		<script>
+			//自定义规则：zhongwen
+			$.extend($.fn.validatebox.defaults.rules,{
+				//zhongwen规则名
+				zhongwen : {
+					//value表示用户在文本框中输入的内容
+					validator : function(value) {
+						if (/^[\u4e00-\u9fa5]*$/.test(value)) {
+						//if (/^[a-zA-Z]*$/.test(value)) {//输入的英文
+							return true;
+						}
+					},
+					//如果验证非法不是中文，就显示如下提示
+					message : '姓名必须为中文'
+				},
+			});
+		</script>
+	</body>
+</html>

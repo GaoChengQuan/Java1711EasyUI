@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../jquery-easyui/themes/default/easyui.css" />
+		<!-- 图标样式-->
+		<link rel="stylesheet" href="../jquery-easyui/themes/icon.css" />
+		<!-- jquery核心库-->
+		<script src="../jquery-easyui/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- easyui核心库-->
+		<script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div style="margin:20px 0;">
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('open')">Open</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('close')">Close</a>
+		</div>
+		<div id="dlg" class="easyui-dialog" title="Toolbar and Buttons" style="width:400px;height:200px;padding:10px" data-options="
+				iconCls: 'icon-save',
+				tools : [{
+						iconCls : 'icon-add',
+						handler : function() {
+							alert('tools remove');
+						}
+				}],
+				toolbar: [{
+					text:'Add',
+					iconCls:'icon-add',
+					handler:function(){
+						alert('add')
+					}
+				},'-',{
+					text:'Save',
+					iconCls:'icon-save',
+					handler:function(){
+						alert('save')
+					}
+				}],
+				buttons: [{
+					text:'Ok',
+					iconCls:'icon-ok',
+					handler:function(){
+						alert('ok');
+					}
+				},{
+					text:'Cancel',
+					handler:function(){
+						alert('cancel');;
+					}
+				}]
+				
+			">
+			The dialog content.
+		</div>
+	</body>
+
+</html>
